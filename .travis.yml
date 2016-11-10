@@ -1,0 +1,12 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker info
+  - docker build -t hrektts/doxygen .
+
+script:
+  - docker run --rm -it hrektts/doxygen doxygen -version
+  - docker run -u 1000:1000 --rm -it hrektts/doxygen doxygen -version
