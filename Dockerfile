@@ -1,9 +1,9 @@
-FROM hrektts/ubuntu:16.04.20170710
+FROM ubuntu:20.04
 MAINTAINER mps299792458@gmail.com
 
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    doxygen graphviz \
+    doxygen graphviz git \
  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /data
